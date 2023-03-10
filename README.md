@@ -19,3 +19,7 @@ override fun onResume() {
 1. 运行Android项目
 2. 多次按手机返回键返回上一个界面
 3. 返回三次即可崩溃
+
+
+### 推测原因：
+第一个FlutterActivity在destroy时污染了共享的Engines数据导致“activeEngines.get(0).spawn(context, dar...”在孵化时崩溃
